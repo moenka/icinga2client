@@ -19,7 +19,6 @@ class Client(object):
     self.client = APIClient(url, args.username, args.password)
     self.raw = args.raw
     self.verbose = args.verbose
-    ui.setup(verbose=args.verbose)
 
   def __output(self, obj):
     if self.raw:

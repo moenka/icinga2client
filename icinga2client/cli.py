@@ -61,9 +61,10 @@ def run():
                               'objects of a specific type'))
     args = parser.parse_args()
 
-    if args.verbose is True:
-        ui.debug(args)
-    else:
+    ui.setup(verbose=args.verbose)
+    ui.debug(args)
+
+    if args.verbose is False:
         urllib3.disable_warnings()
 
     client = Client(args)
